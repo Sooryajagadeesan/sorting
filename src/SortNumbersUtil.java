@@ -1,4 +1,4 @@
-public class SortNumberUtil {
+public class SortNumbersUtil {
     enum SortOrder {
         ASCENDING, DESCENDING;
     }
