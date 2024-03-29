@@ -9,10 +9,6 @@ public class SortNumbersUtil {
      * @param sortOrder Order of sorting.
      */
     public static void bubbleSort(int[] numbers, SortOrder sortOrder) {
-        if (sortOrder != SortOrder.DESCENDING) {
-            sortOrder = SortOrder.ASCENDING;
-        }
-
         for (int i = 0; i < numbers.length - 1; i++) {
             boolean isSwapHappened = false;
             for (int j = 1; j < numbers.length - i; j++) {
