@@ -36,4 +36,31 @@ public class SortNumbersUtil extends ArrayUtil {
             }
         }
     }
+
+    /**
+     *
+     * @param numbers An integer array to be sorted.
+     * @param sortOrder Order of sorting.
+     */
+    public static void selectionSort(int[] numbers, SortOrder sortOrder) {
+        if (numbers == null) {
+            return;
+        }
+
+        for (int i = 0; i < numbers.length - 1; i++) {
+            if (sortOrder == SortOrder.DESCENDING) {
+                int currentMaxElementIndex = findMaxElementIndexInRange(numbers, i, numbers.length - 1);
+                if (i != currentMaxElementIndex) {
+                    swapArrayElements(numbers, i, currentMaxElementIndex);
+                }
+            } else {
+                int lastUnsortedIndex = numbers.length - 1 - i;
+                int currentMaxElementIndex = findMaxElementIndexInRange(numbers, 0, lastUnsortedIndex);
+
+                if (lastUnsortedIndex !=  currentMaxElementIndex) {
+                    swapArrayElements(numbers, lastUnsortedIndex, currentMaxElementIndex);
+                }
+            }
+        }
+    }
 }
