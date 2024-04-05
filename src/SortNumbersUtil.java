@@ -63,4 +63,31 @@ public class SortNumbersUtil extends ArrayUtil {
             }
         }
     }
+
+    /**
+     *
+     * @param numbers An integer array to be sorted.
+     * @param sortOrder Order of sorting.
+     */
+    public static void insertionSort(int[] numbers, SortOrder sortOrder) {
+        if (numbers == null) {
+            return;
+        }
+
+        for (int i = 1; i < numbers.length; i++) {
+            int j = i;
+
+            if (sortOrder == SortOrder.DESCENDING) {
+                while (j >= 1 && numbers[j] > numbers[j - 1]) {
+                    swapArrayElements(numbers, j, j - 1);
+                    j--;
+                }
+            } else {
+                while (j >= 1 && numbers[j] < numbers[j - 1]) {
+                    swapArrayElements(numbers, j, j - 1);
+                    j--;
+                }
+            }
+        }
+    }
 }
